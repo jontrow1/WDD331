@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+//Color Variables
+$light-blue: #6495ED;
+$dark-cream: #DEB887;
+$light-cream: #FAEBD7;
+
+//Font Variables
+$main-font: Helvetica, Arial, sans-serif;
+$header-font: 'Lora', serif;
+
+@mixin active() {
+    text-decoration: none;
+    color: $dark-cream;
+}
+
+body {
+    font-family: $main-font;
+}
+
+main, header {
+  width: 450px;
+}
+
+main {
+  background-color: $light-cream;
+  padding: 40px 20px 5px 40px;
+}
+
+h1 {font-family: $header-font;}
+
+/*-- Header Styling --*/
+header {
+    background-color: $light-blue;
+    text-align: right;
+    padding: 30px;
+    font-weight: bold;
+    ul {
+        list-style-type: none;
+        line-height: 2em;
+    }
+    a, a:visited {
+        text-decoration: none;
+        color: $light-cream;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: #fff;
+    }
+    a:active {@include active();}
+}
+
+/*-- Article Styling --*/
+article {
+    background-color: white;
+    padding: 30px;
+    box-shadow: 5px 5px 10px lightgrey;
+    margin-bottom: 30px;
+}
+  
+/*-- Title Links --*/
+h2 {
+    font-family: $header-font;
+    a, a:visited {
+    text-decoration: none;
+    color: #000;
+    }
+    a:hover{
+    text-decoration: underline;
+    color: $light-blue;
+    }
+    a:active {@include active();}
+}
+  
+/*-- Other Links --*/
+a, a:visited {
+    text-decoration: none;
+    color: $light-blue;
+}
+  
+a:hover{text-decoration: underline;}
+  
+a:active {@include active();}
+  
+.post-date {
+    color: grey;
+    font-weight: bold;
+}
+  
+figure {text-align: center;}
+  
+img {
+    max-width: 200px;
+    margin-top: 50px;
+}
+  
+@media only screen and (min-width: 64em) {
+    
+    header {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    }
+    
+    main {
+      margin-left: 250px;
+      width: 800px;
+      position: fixed;
+      top: 0;
+    }
+    
+    article {
+    padding: 40px;
+    margin: 20px 60px;
+    box-shadow: 5px 5px 10px lightgrey;
+    margin-bottom: 30px;
+    }
+    
+    img {max-width: 250px;}
+}
